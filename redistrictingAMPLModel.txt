@@ -1,0 +1,76 @@
+param n; #number of counties in the state
+
+param m;  #number of electoral districts
+
+set counties; #the set of state counties
+
+set districts := 1..m;  #the set of districts
+
+param p{i in counties, j in districts} binary;
+#is 1 if county i can be included in district j
+
+set possiblePairs := {i in counties, j in districts: p[i,j] == 1};
+#set of possible county/district pairings
+
+param distances{i in counties, j in counties} integer;
+#distance between counties i and j measured by how many adjacent counties away i is from j
+
+param MAXDISTANCE; #maximum allowable distance between two counties in a district
+
+param d{i in counties}; #the number of Democrat voters in a county
+
+param r{i in counties}; #the number of Republican voters in a county
+
+param v{i in counties} := d[i] + r[i];
+#the number of total Democrat and Republican voters in county
+
+param LARGE := sum{i in counties}v[i]; #sum of all voters in state
+
+param idealNumDemocratDistricts := round(((sum{i in counties}d[i]) / (sum{i in counties}v[i])) * m);
+#proportion of democrat voters multiplied by total number of districts
+
+param targetPopulation := round((sum{i in counties}v[i]) / m);
+
+param politicalLeeway; #a tuning parameter for the allowable error of actual Democrat districts from the ideal
+
+var leansDemocrat{j in districts} binary;
+#is 1 if more Democrats in a district, 0 if not
+
+var c{i in counties, j in districts: p[i,j] == 1} binary;
+#is 1 if county i is chosen for district j
+
+var z; #the largest difference from target population among all districts
+
+minimize LargestDifference: z;
+
+subject to zIsLargestDifferencePos{j in districts}:
+	z >= ((sum{(i,j) in possiblePairs}c[i,j]*v[i]) - targetPopulation);
+
+subject to zIsLargestDifferenceNeg{j in districts}:
+ 	z >= (-1 * ((sum{(i,j) in possiblePairs}c[i,j]*v[i]) - targetPopulation));
+
+subject to Exactly1DistrictPerCounty{i in counties}:
+	sum{(i,j) in possiblePairs}c[i,j]=1;
+
+subject to setOneIfLeansDemocrat{j in districts}:
+	LARGE * leansDemocrat[j] >= ((sum{(i,j) in possiblePairs}c[i,j]*d[i]) - (sum{(i,j) in possiblePairs}c[i,j]*r[i]));
+
+subject to setZeroIfLeansRepublican{j in districts}:
+	LARGE * (1 - leansDemocrat[j]) >= (-1 * ((sum{(i,j) in possiblePairs}c[i,j]*d[i]) - (sum{(i,j) in possiblePairs}c[i,j]*r[i])));
+
+subject to lessThanMaxDemocratDistricts:
+	sum{j in districts}leansDemocrat[j] <= idealNumDemocratDistricts + politicalLeeway;
+
+subject to greaterThanMinDemocratDistricts:
+	sum{j in districts}leansDemocrat[j] >= idealNumDemocratDistricts - politicalLeeway;
+
+subject to maxDistance{i in counties, j in counties, k in districts:
+											 p[i,k] == 1 and p[j,k] == 1 and distances[i,j] > MAXDISTANCE}:
+	c[i,k] + c[j,k] <= 1;
+
+set bridgeCounties{i in counties, j in counties, dist in 2..MAXDISTANCE: distances[i,j] == dist} :=
+	{k in counties: (distances[i,k] == 1 and distances[j,k] == dist - 1) or (distances[i,k] == dist - 1 and distances[j,k] == 1)};
+
+subject to countyBridge{i in counties, j in counties, l in districts, dist in 2..MAXDISTANCE:
+												distances[i,j] == dist and p[i,l] == 1 and p[j,l] == 1}:
+	sum{k in bridgeCounties[i,j,dist]: p[k,l] == 1}c[k,l] >= c[i,l] + c[j,l] - 1;

@@ -1,0 +1,9 @@
+option gurobi_options 'timing 1';
+solve;
+display _total_solve_time;
+display c;
+display idealNumDemocratDistricts;
+display leansDemocrat;
+display MAXDISTANCE;
+display z;
+display targetPopulation;
