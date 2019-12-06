@@ -7,7 +7,7 @@
 ## Description
 
 ### Overview
-This directory contains C++ code to compute the shortest distances between every pair of counties in a state. It does this by taking as an argument an adjacency matrix for the state like the one found in [shortestDistances.cc](/shortestDistances/shortestDistances.cc) where the entry is 1 if the corresponding pair of counties are adjacent and 0 if not. The code then uses Dijkstra's shortest path algorithm to compute the shortest distance between any pair of nodes where that distance is defined by the number of counties that must be passed through to reach the other county. It outputs these distances to stdout as a matrix and can be used to define the 'distances' parameter in the AMPL model.
+This directory contains C++ code to compute the shortest distances between every pair of counties in a state. It does this by taking as an argument an adjacency matrix for the state like the one found in [adjacencyMatrixOhio.txt](/shortestDistances/adjacencyMatrixOhio.txt) where the entry is 1 if the corresponding pair of counties are adjacent and 0 if not. The code then uses Dijkstra's shortest path algorithm to compute the shortest distance between any pair of nodes where that distance is defined by the number of counties that must be passed through to reach the other county. It outputs these distances to stdout as a matrix and can be used to define the 'distances' parameter in the AMPL model.
 
 ## Usage
 
