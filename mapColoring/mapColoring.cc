@@ -34,7 +34,7 @@ int main(int argc, char** argv)
   //Read in image from input
   if (argc < 6)
   {
-    cout << "Proper use is ./map-coloring <image-name> <county-locations> <district-choices> <blues> <reds> <leansDemocrat>" << endl;
+    cout << "Proper use is ./mapColoring <image-name> <county-locations> <district-choices> <blues> <reds> <leansDemocrat>" << endl;
     return EXIT_FAILURE;
   }
 
