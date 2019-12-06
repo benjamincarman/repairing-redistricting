@@ -1,0 +1,167 @@
+*************************************************************
+
+   NEOS Server Version 5.0
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information  for any particular purpose.
+*************************************************************
+Job 7722172 has finished.
+File exists
+You are using the solver gurobi_ampl.
+Checking ampl.mod for gurobi_options...
+Checking ampl.com for gurobi_options...
+Executing AMPL.
+processing data.
+processing commands.
+Executing on prod-exec-1.neos-server.org
+
+614 variables:
+	613 binary variables
+	1 linear variable
+22753 constraints, all linear; 83746 nonzeros
+	94 equality constraints
+	22659 inequality constraints
+1 linear objective; 1 nonzero.
+
+Gurobi 8.1.0: timing 1
+threads=4
+
+Times (seconds):
+Input =  0.044948
+Solve =  292.393 (summed over threads)
+Output = 0.033223
+Elapsed = 76
+Gurobi 8.1.0: optimal solution; objective 32749
+534809 simplex iterations
+2211 branch-and-cut nodes
+plus 2 simplex iterations for intbasis
+_total_solve_time = 292.487
+
+c [*,*]
+:             1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  :=
+Adams         0   1   .   .   .   0   .   .   .   .   .   .   .   .   0   .
+Allen         .   .   0   0   1   .   0   0   0   .   .   0   .   .   0   .
+Ashland       .   .   .   0   .   0   1   .   0   .   .   0   0   .   .   0
+Ashtabula     .   .   .   .   .   .   .   .   .   .   1   .   0   0   .   .
+Athens        0   1   0   0   .   0   0   .   .   0   .   0   0   .   0   .
+Auglaize      .   .   0   1   0   .   0   0   0   .   .   0   .   .   0   .
+Belmont       .   0   .   .   .   0   0   .   .   .   .   0   1   .   0   .
+Brown         0   1   .   .   .   0   .   .   .   .   .   .   .   .   0   .
+Butler        0   .   .   1   0   .   .   0   .   0   .   .   .   .   0   .
+Carroll       .   0   .   .   .   0   0   .   .   .   .   0   1   .   0   .
+Champaign     .   .   1   0   0   .   0   0   0   .   .   0   .   .   0   .
+Clark         0   .   .   0   0   .   .   0   .   1   .   .   .   .   0   .
+Clermont      1   0   .   .   .   0   .   .   .   .   .   .   .   .   0   .
+Clinton       1   0   0   0   .   0   .   .   .   0   .   0   .   .   0   .
+Columbiana    .   0   .   .   .   0   0   .   .   .   .   0   1   .   0   .
+Coshocton     .   .   .   0   .   1   0   .   0   .   .   0   0   .   .   0
+Crawford      .   .   0   0   1   .   0   0   0   .   .   0   .   .   0   .
+Cuyahoga-NE   .   .   .   .   .   .   .   .   0   .   0   .   0   1   .   0
+Cuyahoga-NW   .   .   .   0   0   .   0   .   1   .   0   .   .   .   .   0
+Cuyahoga-SE   .   .   .   .   .   .   .   .   .   .   0   .   0   1   .   .
+Cuyahoga-SW   .   .   .   .   .   .   0   .   0   .   1   .   0   .   .   0
+Darke         0   .   .   1   0   .   .   0   .   0   .   .   .   .   0   .
+Defiance      .   .   .   0   1   .   .   0   0   .   .   .   .   .   .   .
+Delaware      .   .   0   0   .   1   0   .   .   .   .   0   .   .   0   .
+Erie          .   .   0   0   0   .   0   1   0   .   0   0   .   .   0   0
+Fairfield     0   1   0   0   .   0   .   .   .   0   .   0   .   .   0   .
+Fayette       0   1   0   0   .   0   .   0   .   0   .   0   .   .   0   .
+Franklin-E    .   .   0   .   .   .   .   .   .   .   .   1   .   .   0   .
+Franklin-N    .   .   1   0   .   0   0   .   .   .   .   0   .   .   0   .
+Franklin-SW   0   0   1   0   .   0   .   .   .   0   .   0   .   .   0   .
+Fulton        .   .   .   0   0   .   .   1   0   .   .   .   .   .   .   .
+Gallia        .   1   .   .   .   0   0   .   .   .   .   0   0   .   0   .
+Geauga        .   .   .   .   .   .   .   .   .   .   1   .   0   0   .   .
+Greene        1   .   .   .   .   .   .   0   .   0   .   .   .   .   0   .
+Guernsey      .   0   .   .   .   1   0   .   .   .   .   0   0   .   0   .
+Hamilton-E    1   0   .   .   .   0   .   .   .   .   .   .   .   .   0   .
+Hamilton-W    0   0   .   .   .   .   .   0   .   0   .   .   .   .   1   .
+Hancock       .   .   .   0   1   .   .   0   0   .   .   .   .   .   .   .
+Hardin        .   .   .   0   1   .   .   0   0   .   .   .   .   .   .   .
+Harrison      .   0   .   .   .   0   0   .   .   .   .   0   1   .   0   .
+Henry         .   .   .   0   0   .   .   1   0   .   .   .   .   .   .   .
+Highland      0   1   .   .   .   0   .   .   .   .   .   .   .   .   0   .
+Hocking       0   1   0   0   .   0   .   .   .   0   .   0   .   .   0   .
+Holmes        .   .   .   0   .   0   1   .   0   .   .   0   0   .   .   0
+Huron         .   .   0   0   1   0   0   0   0   .   .   0   0   .   0   0
+Jackson       .   1   .   .   .   0   0   .   .   .   .   0   0   .   0   .
+Jefferson     .   0   .   .   .   0   0   .   .   .   .   0   1   .   0   .
+Knox          .   .   .   0   .   0   1   .   0   .   .   0   0   .   .   0
+Lake          .   .   .   .   .   .   .   .   .   .   1   .   0   0   .   .
+Lawrence      .   1   .   .   .   0   0   .   .   .   .   0   0   .   0   .
+Licking       .   .   0   0   .   1   0   .   .   .   .   0   .   .   0   .
+Logan         .   .   0   1   0   .   0   0   0   .   .   0   .   .   0   .
+Lorain        .   .   0   0   0   0   0   0   1   .   0   0   0   .   0   0
+Lucas         .   .   .   0   0   .   0   1   0   .   0   .   .   .   .   0
+Madison       0   0   1   0   .   0   .   .   .   0   .   0   .   .   0   .
+Mahoning      .   0   .   .   .   0   0   .   .   .   0   0   1   0   0   0
+Marion        .   .   0   0   1   0   0   0   0   .   .   0   .   .   0   .
+Medina        .   .   .   0   .   0   0   .   1   .   0   0   0   .   .   0
+Meigs         .   1   .   .   .   0   0   .   .   .   .   0   0   .   0   .
+Mercer        0   .   0   1   0   .   0   0   0   0   .   0   .   .   0   .
+Miami         0   .   .   0   0   .   .   0   .   1   .   .   .   .   0   .
+Monroe        .   0   .   .   .   1   0   .   .   .   .   0   0   .   0   .
+Montgomery    0   .   .   .   .   .   .   0   .   1   .   .   .   .   0   .
+Morgan        0   0   0   0   .   1   .   .   .   0   .   0   .   .   0   .
+Morrow        .   .   0   0   .   0   1   .   .   .   .   0   .   .   0   .
+Muskingum     .   0   0   0   .   1   0   .   .   .   .   0   0   .   0   .
+Noble         .   0   .   .   .   1   0   .   .   .   .   0   0   .   0   .
+Ottawa        .   .   .   0   0   .   0   1   0   .   0   .   .   .   .   0
+Paulding      .   .   .   0   1   .   .   0   0   .   .   .   .   .   .   .
+Perry         0   0   0   0   .   1   .   .   .   0   .   0   .   .   0   .
+Pickaway      0   1   0   0   .   0   .   .   .   0   .   0   .   .   0   .
+Pike          0   1   .   .   .   0   .   .   .   .   .   .   .   .   0   .
+Portage       .   .   .   .   .   0   0   .   0   .   0   .   0   0   .   1
+Preble        0   .   .   1   0   .   .   0   .   0   .   .   .   .   0   .
+Putnam        .   .   .   0   1   .   .   0   0   .   .   .   .   .   .   .
+Richland      .   .   0   0   .   0   1   .   0   .   .   0   0   .   0   0
+Ross          0   1   0   0   .   0   .   .   .   0   .   0   .   .   0   .
+Sandusky      .   .   0   0   1   .   0   0   0   .   .   0   .   .   0   .
+Scioto        0   1   .   .   .   0   0   .   .   .   .   0   0   .   0   .
+Seneca        .   .   0   0   1   .   0   0   0   .   .   0   .   .   0   .
+Shelby        .   .   0   1   0   .   0   0   0   .   .   0   .   .   0   .
+Stark         .   .   .   0   .   0   1   .   0   .   0   0   0   0   .   0
+Summit        .   .   .   .   .   0   0   .   0   .   0   .   0   0   .   1
+Trumbull      .   .   .   .   .   0   .   .   .   .   0   .   1   0   .   0
+Tuscarawas    .   0   .   0   .   1   0   .   0   .   .   0   0   .   0   0
+Union         .   .   1   0   0   .   0   0   0   .   .   0   .   .   0   .
+VanWert       .   .   .   1   0   .   .   0   0   .   .   .   .   .   .   .
+Vinton        0   1   0   0   .   0   .   .   .   0   .   0   .   .   0   .
+Warren        0   0   .   .   .   .   .   0   .   0   .   .   .   .   1   .
+Washington    .   0   .   .   .   1   0   .   .   .   .   0   0   .   0   .
+Wayne         .   .   .   .   .   .   1   .   0   .   0   .   0   .   .   0
+Williams      .   .   .   0   0   .   .   1   0   .   .   .   .   .   .   .
+Wood          .   .   .   0   1   .   .   0   0   .   .   .   .   .   .   .
+Wyandot       .   .   .   0   1   .   .   0   0   .   .   .   .   .   .   .
+;
+
+idealNumDemocratDistricts = 7
+
+leansDemocrat [*] :=
+ 1  0
+ 2  0
+ 3  0
+ 4  0
+ 5  0
+ 6  0
+ 7  0
+ 8  1
+ 9  1
+10  0
+11  0
+12  1
+13  1
+14  1
+15  0
+16  1
+;
+
+MAXDISTANCE = 4
+
+z = 32749
+
+targetPopulation = 321909
